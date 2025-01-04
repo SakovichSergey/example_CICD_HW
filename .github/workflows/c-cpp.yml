@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - run: cmake ..
-    - run: cmake --build ./
+    - run: cmake --build .
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
