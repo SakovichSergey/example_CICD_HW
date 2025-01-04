@@ -1,7 +1,0 @@
-/home/sergey/CICD_example/example_CICD_HW/example_HW/build/Desktop-Debug/CMakeFiles/example_HW.dir
-/home/sergey/CICD_example/example_CICD_HW/example_HW/build/Desktop-Debug/CMakeFiles/edit_cache.dir
-/home/sergey/CICD_example/example_CICD_HW/example_HW/build/Desktop-Debug/CMakeFiles/rebuild_cache.dir
-/home/sergey/CICD_example/example_CICD_HW/example_HW/build/Desktop-Debug/CMakeFiles/list_install_components.dir
-/home/sergey/CICD_example/example_CICD_HW/example_HW/build/Desktop-Debug/CMakeFiles/install.dir
-/home/sergey/CICD_example/example_CICD_HW/example_HW/build/Desktop-Debug/CMakeFiles/install/local.dir
-/home/sergey/CICD_example/example_CICD_HW/example_HW/build/Desktop-Debug/CMakeFiles/install/strip.dir
