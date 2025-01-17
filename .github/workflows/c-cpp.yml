@@ -6,8 +6,6 @@ jobs: #Начало секции джобов
     runs-on: ubuntu-latest #Среда выполнения джоба
     steps:
       - uses: actions/checkout@v2
-      - name: configure
-        run: ./configure
       - name: make
         run: make
 
