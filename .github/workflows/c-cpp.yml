@@ -6,8 +6,11 @@ jobs: #Начало секции джобов
     runs-on: ubuntu-latest #Среда выполнения джоба
     steps:
       - uses: actions/checkout@v2
-      - name: Print hello #Название шага
-        run: echo "Hello world!" #Команда, которая будет выполнена в терминале
+      - name: configure
+        run: ./configure
+      - name: make
+        run: make
+
 
 
 #name: C/C++ CI
