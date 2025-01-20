@@ -16,6 +16,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: browser
       run: ls
     - name: Configure CMake
       run: cmake -B ${{github.workspace}}/example_HW/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
