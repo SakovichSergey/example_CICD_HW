@@ -9,7 +9,7 @@ jobs: #Начало секции джобов
       - name: source
         run: ls
       - name: input
-        run: cd ${{github.workspace}}/example_HW
+        run: cd example_HW
       - name: source
         run: ls
 
