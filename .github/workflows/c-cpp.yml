@@ -7,7 +7,7 @@ jobs: #Начало секции джобов
     steps:
       - uses: actions/checkout@v4
       - name: source
-        run: ls
+        run: ls -dl $( pwd )/*
       - name: input
         run: cd example_HW
       - name: source
