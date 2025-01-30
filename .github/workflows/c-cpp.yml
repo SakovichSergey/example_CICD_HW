@@ -5,9 +5,9 @@ jobs: #Начало секции джобов
   print_hello: #Начало секции первой джобы
     runs-on: ubuntu-latest #Среда выполнения джоба
     steps:
-      - uses: actions/checkout@v2
-      - name: make
-        run: make
+      - uses: actions/checkout@v4
+      - name: source
+        run: ls
 
 
 
