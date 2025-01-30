@@ -11,7 +11,7 @@ jobs: #Начало секции джобов
       - name: input
         run: cd /home/runner/work/example_CICD_HW/example_CICD_HW/example_HW
       - name: source
-        run: ls -dl $( pwd )/*
+        run: ls 
 
 
 #name: C/C++ CI
