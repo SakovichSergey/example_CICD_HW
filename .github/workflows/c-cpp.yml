@@ -8,7 +8,10 @@ jobs: #Начало секции джобов
       - uses: actions/checkout@v4
       - name: source
         run: ls
-
+      - name: input
+        run: cd ./example_HW
+      - name: source
+        run: ls
 
 
 #name: C/C++ CI
