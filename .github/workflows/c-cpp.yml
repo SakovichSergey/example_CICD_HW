@@ -9,9 +9,9 @@ jobs: #Начало секции джобов
       - name: source
         run: ls -dl $( pwd )/*
       - name: input
-        run: cd example_CICD_HW/example_HW
+        run: cd example_HW
       - name: source
-        run: ls
+        run: ls -dl $( pwd )/*
 
 
 #name: C/C++ CI
