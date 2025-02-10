@@ -1,55 +1,39 @@
-name: Print workflow #Название workflow
-on: workflow_dispatch #Триггер, который будет вызывать workflow
+name: C/C++ CI
 
-jobs: #Начало секции джобов
-  print_hello: #Начало секции первой джобы
-    runs-on: ubuntu-latest #Среда выполнения джоба
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: source
-        run: ls -dl $( pwd )/*
-      - name: input
-        run: cd /home/runner/work/example_CICD_HW/example_CICD_HW/example_HW
-      - name: source
-        run: ls 
-
-
-#name: C/C++ CI
-
-#on:
-#  push:
-#    branches: [ "master" ]
-#  pull_request:
-#    branches: [ "master" ]
-
-#jobs:
- # build:
-  #  runs-on: ubuntu-latest
-   # steps:
-    #- name: TestHello
-    #- run: echo "Hello world"
-   # - uses: actions/checkout@v4
-    # - run: mkdir build
-    # - run: cd build
-    # - run: cmake ..
-    # - run: make
-    #- name: Create Release
-     # id: create_release
-      #uses: actions/create-release@v1
-      #env: 
-       # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #with:  
-       # tag_name: ${{ github.run_number }}
-        #release_name: Release ${{ github.run_number }}
-        #draft: false
-        #prerelease: false
-    #- name: Upload Release Asset
-     # id: upload-release-asset
-      #uses: actions/upload-release-asset@v1
-      #env:
-       #  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-     # with:  
-      #  upload_url: ${{ steps.create_release.outputs.upload_url }}
-       # asset_path: ./HW-0.0.${{ github.run_number }}-Linux.deb
-        #asset_name: HW-0.0.${{ github.run_number }}-Linux.deb
-        #asset_content_type: application/vnd.debian.binary-package
+    - name: TestHello
+    - run: echo "Hello world"
+    - uses: actions/checkout@v4
+    - run: mkdir build
+    - run: cd build
+    - run: cmake ..
+    - run: make
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env: 
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:  
+        tag_name: ${{ github.run_number }}
+        release_name: Release ${{ github.run_number }}
+        draft: false
+        prerelease: false
+    - name: Upload Release Asset
+      id: upload-release-asset
+      uses: actions/upload-release-asset@v1
+      env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:  
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./HW-0.0.${{ github.run_number }}-Linux.deb
+        asset_name: HW-0.0.${{ github.run_number }}-Linux.deb
+        asset_content_type: application/vnd.debian.binary-package
