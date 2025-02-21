@@ -1,17 +1,23 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.11)
+
+#project(example_HWe LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(PATCH_VERSION "1" CACHE INTERNAL "Patch version")
 set(PROJECT_VESRION 0.0.${PATCH_VERSION})
 
-project(example_HW VERSION ${PROJECT_VESRION})
+project(example_HWe VERSION ${PROJECT_VESRION})
 
 find_package(Boost COMPONENTS unit_test_framework REQUIRED)
 
-configure_file(version.h.in version.h)
+configure_file(vpatch.h.in vpatch.h)
 
 add_executable(example_HWe  main.cpp)
-add_library(example_HW  lib.cpp)
+add_library(example_HW  version.cpp version.h)
 add_executable(test_version test_version.cpp)
+
 
 set_target_properties(example_HWe example_HW test_version PROPERTIES
     CXX_STANDARD 14
@@ -37,7 +43,7 @@ if (MSVC)
     target_compile_options(example_HWe PRIVATE
         /W4
     )
-    target_compile_options(example_HW PRIVATE
+   target_compile_options(example_HW PRIVATE
         /W4
     )
     target_compile_options(test_version PRIVATE
@@ -56,7 +62,15 @@ else ()
 endif()
 
 
-install(TARGETS example_HWe RUNTIME DESTINATION bin)
+#install(TARGETS example_HWe RUNTIME DESTINATION bin)
+
+include(GNUInstallDirs)
+
+install(TARGETS example_HWe
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+)
+
 
 set(CPACK_GENERATOR DEB)
 
