@@ -26,6 +26,7 @@ jobs:
         with:  
           tag_name: ${{ github.run_number }}
           release_name: Release ${{ github.run_number }}
+          allowUpdates: true
           draft: false
           prerelease: false
       - name: Upload Release Asset
